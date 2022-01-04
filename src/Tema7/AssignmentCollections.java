@@ -54,8 +54,8 @@ public class AssignmentCollections {
 
         //tema8 pct1
         final Set<String> uniqueIds = assignments.stream()
-                .map(single -> single.getId())
-                .map(n -> String.valueOf(n))
+                .map(singleAssignment -> singleAssignment.getId())
+                .map(assignmentId -> String.valueOf(assignmentId))
                 .collect(Collectors.toSet());
         System.out.println("De aici incepe tema 8 ");
         System.out.println("1. unique ids");
@@ -69,9 +69,9 @@ public class AssignmentCollections {
                 .collect(Collectors.toList());
         System.out.println(assignments11);
 
-        System.out.println("3. HashMap");
-        HashMap<Integer,Assignment> assignmentHashMap1 = (HashMap<Integer, Assignment>) assignments.stream()
-                .collect( Collectors.toMap(Assignment::getId,
+        System.out.println("4. HashMap");
+        HashMap<String, Assignment> assignmentHashMap1 = (HashMap<String, Assignment>) assignments.stream()
+                .collect( Collectors.toMap(assignment -> String.valueOf(assignment.getId()),
                         Function.identity()) );
         System.out.println(assignmentHashMap1);
 

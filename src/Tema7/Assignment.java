@@ -1,5 +1,7 @@
 package Tema7;
 
+import java.util.UUID;
+
 //homework point 1
 public class Assignment implements Comparable<Assignment> {
     private Integer id;
