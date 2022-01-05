@@ -23,9 +23,9 @@ public class HumanRepository<T extends Human> {
     public void deleteById(String id) {
         UUID givenID = UUID.fromString(id);
         //humans // [{id:1, name:Petru} {id:2, name:Ana} {id:3, name:Maria}]
-        humans.stream().
-                filter(human -> human.getUniqueID().equals(givenID))
-                .forEach(human -> humans.remove(human));
+        humans.stream()
+                .filter(humanx -> humanx.getUniqueID().equals(givenID))
+                .forEach(humany -> humans.remove(humany));
     }
 
     public void updateById(String id, T humanUpdate){
@@ -38,16 +38,30 @@ public class HumanRepository<T extends Human> {
                         human.setDateOfBirth(humanUpdate.getDateOfBirth());
                         human.setDateOfHiring(humanUpdate.getDateOfHiring());
                         human.setFacultyName(humanUpdate.getFacultyName());
+                        human.setSpecializationName(humanUpdate.getSpecializationName());
+                        human.setType(humanUpdate.getType());
                 });
 
     }
 
-    // public T getById(String id){
-      //  UUID givenID = UUID.fromString(id);
-      //  humans.stream()
-      //          .filter(human -> human.getUniqueID().equals(givenID))
-     //           .forEach(human -> return human  );
+     public List<T> getById(String id) {
+         UUID givenID = UUID.fromString(id);
+         return humans.stream()
+                 .filter(human -> human.getUniqueID().equals(givenID))
+                 .collect(Collectors.toList());
+     }
 
-  //  getAllByName(String name)
+    public List<T> getAllByName(String name){
+        return humans.stream()
+                .filter(human -> human.getFirstName().equals(name))
+                .collect(Collectors.toList());
 
+    }
+
+    @Override
+    public String toString() {
+        return "HumanRepository{" +
+                "humans=" + humans  +
+                '}';
+    }
 }

@@ -4,21 +4,17 @@ import java.util.UUID;
 
 public interface Human {
 
-    UUID getUniqueID();
+    String getFirstName();
 
-    void setUniqueID(UUID uniqueID);
-
-    String getSpecializationName();
-
-    void setSpecializationName(String specializationName);
+    void setFirstName(String firstName);
 
     String getLastName();
 
     void setLastName(String lastName);
 
-    String getFirstName();
+    String getSpecializationName();
 
-    void setFirstName(String firstName);
+    void setSpecializationName(String specializationName);
 
     Integer getDateOfBirth();
 
@@ -33,6 +29,12 @@ public interface Human {
     void setFacultyName(String facultyName);
 
     ScholarType getType();
+
+    void setType(ScholarType type);
+
+    UUID getUniqueID();
+
+    void setUniqueID(UUID uniqueID);
 
 
 }

@@ -13,16 +13,19 @@ public class Student implements Human {
     StudentType type;
     UUID uniqueID;
 
+
     @Override
     public String toString() {
-        return "Tema5.Student{" +
+        return "\n" +
+                "Student{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", dateOfEnrollment=" + dateOfEnrollment +
                 ", facultyName='" + facultyName + '\'' +
                 ", specializationName='" + specializationName + '\'' +
-                ", type='" + type + '\'' +
+                ", type=" + type +
+                ", uniqueID=" + uniqueID +
                 '}';
     }
 
@@ -31,24 +34,23 @@ public class Student implements Human {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName) && Objects.equals(dateOfBirth, student.dateOfBirth) && Objects.equals(dateOfEnrollment, student.dateOfEnrollment) && Objects.equals(facultyName, student.facultyName) && Objects.equals(specializationName, student.specializationName) && Objects.equals(type, student.type);
+        return Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName) && Objects.equals(dateOfBirth, student.dateOfBirth) && Objects.equals(dateOfEnrollment, student.dateOfEnrollment) && Objects.equals(facultyName, student.facultyName) && Objects.equals(specializationName, student.specializationName) && type == student.type && Objects.equals(uniqueID, student.uniqueID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, dateOfBirth, dateOfEnrollment, facultyName, specializationName, type);
+        return Objects.hash(firstName, lastName, dateOfBirth, dateOfEnrollment, facultyName, specializationName, type, uniqueID);
     }
 
-    public Student(UUID uniqueID) {
+    public Student(String firstName, String lastName, Integer dateOfBirth, Integer dateOfEnrollment, String facultyName, String specializationName, StudentType type, UUID uniqueID) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfEnrollment = dateOfEnrollment;
+        this.facultyName = facultyName;
+        this.specializationName = specializationName;
+        this.type = type;
         this.uniqueID = uniqueID;
-    }
-
-    public void setUniqueID(UUID uniqueID) {
-        this.uniqueID = uniqueID;
-    }
-
-    public UUID getUniqueID() {
-        return uniqueID;
     }
 
     @Override
@@ -108,11 +110,6 @@ public class Student implements Human {
     }
 
     @Override
-    public ScholarType getType() {
-        return type;
-    }
-
-    @Override
     public String getSpecializationName() {
         return specializationName;
     }
@@ -122,6 +119,29 @@ public class Student implements Human {
         this.specializationName = specializationName;
     }
 
+    @Override
+    public StudentType getType() {
+        return type;
+    }
 
+    @Override
+    public void setType(ScholarType type) {
+
+    }
+
+    public void setType(StudentType type) {
+        this.type = type;
+    }
+
+
+    @Override
+    public UUID getUniqueID() {
+        return uniqueID;
+    }
+
+    @Override
+    public void setUniqueID(UUID uniqueID) {
+        this.uniqueID = uniqueID;
+    }
 }
 

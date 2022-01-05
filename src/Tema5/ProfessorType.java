@@ -5,7 +5,8 @@ public enum ProfessorType implements ScholarType{
     ASSOCIATE("as"),
     ASSISTENT("asist");
 
-   private String experience;
+    private String experience;
+
     ProfessorType(String experienta){
         this.experience = experienta;
     }

@@ -4,7 +4,9 @@ public enum StudentType implements ScholarType{
     BACHELOR("ba"),
     MASTERS("ma"),
     PHD("phd");
+
     private String type;
+
     StudentType(String tip){
         this.type = tip;
     }
