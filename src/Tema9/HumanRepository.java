@@ -1,5 +1,7 @@
 package Tema9;
 
+import Tema10.EntityNotFoundException;
+import Tema10.ValidationException;
 import Tema5.Human;
 
 import java.util.ArrayList;
@@ -12,6 +14,9 @@ public class HumanRepository<T extends Human> {
     List<T> humans = new ArrayList<>();
 
     public void add(T toAdd) {
+        if (toAdd == null){
+            throw new ValidationException("obj este null");
+        }
         humans.add(toAdd);
     }
 
@@ -21,14 +26,24 @@ public class HumanRepository<T extends Human> {
     }
 
     public void deleteById(String id) {
+        if (id== null){
+            throw new EntityNotFoundException("id este null");
+        }
         UUID givenID = UUID.fromString(id);
         //humans // [{id:1, name:Petru} {id:2, name:Ana} {id:3, name:Maria}]
-        humans.stream()
+        List<T> toDelete = humans.stream()
                 .filter(humanx -> humanx.getUniqueID().equals(givenID))
-                .forEach(humany -> humans.remove(humany));
+                .collect(Collectors.toList());
+        toDelete.forEach(deleteMe -> humans.remove(deleteMe));
     }
 
     public void updateById(String id, T humanUpdate){
+        if (id== null){
+            throw new EntityNotFoundException("id este null");
+        }
+        if(humanUpdate == null){
+            throw new ValidationException("humanupdate este null");
+        }
         UUID givenID = UUID.fromString(id);
         humans.stream()
                 .filter(human -> human.getUniqueID().equals(givenID))
@@ -45,6 +60,9 @@ public class HumanRepository<T extends Human> {
     }
 
      public List<T> getById(String id) {
+         if (id== null){
+             throw new ValidationException("id este null");
+         }
          UUID givenID = UUID.fromString(id);
          return humans.stream()
                  .filter(human -> human.getUniqueID().equals(givenID))
@@ -52,6 +70,9 @@ public class HumanRepository<T extends Human> {
      }
 
     public List<T> getAllByName(String name){
+        if (name == null){
+            throw new ValidationException("name este null");
+        }
         return humans.stream()
                 .filter(human -> human.getFirstName().equals(name))
                 .collect(Collectors.toList());

@@ -21,11 +21,13 @@ public class HumanService {
                 "matematica", StudentType.PHD,UUID.randomUUID());
         Student s4 = new Student("Marius","Escu",12,13,"Lala",
                 "chimie", StudentType.MASTERS,UUID.randomUUID());
+        //Student s5 = null;
 
         StudentRepository.add(s1);
         StudentRepository.add(s2);
         StudentRepository.add(s3);
         StudentRepository.add(s4);
+        //StudentRepository.add(s5);
 
         Professor p1 = new Professor("Horatiu","Malaele",01,30,"Film",
                 ProfessorType.PROFESSOR,UUID.randomUUID());
@@ -55,23 +57,30 @@ public class HumanService {
                 ProfessorType.PROFESSOR,UUID.randomUUID());
         Professor update4 = new Professor("Otilia", "Cornea",20,30,"Sociologie",
                 ProfessorType.PROFESSOR,UUID.randomUUID());
+        //Professor update5 = null;
 
         StudentRepository.updateById(s1.getUniqueID().toString(),update1);
         StudentRepository.updateById(s2.getUniqueID().toString(),update2);
         ProfessorRepository.updateById(p2.getUniqueID().toString(),update3);
         ProfessorRepository.updateById(p3.getUniqueID().toString(),update4);
+        //ProfessorRepository.updateById(p1.getUniqueID().toString(),update5);
         System.out.println("3.3 Modify 2 obj");
         System.out.println(StudentRepository);
         System.out.println(ProfessorRepository);
 
         //3.4 Delete two obj from each repo...
-        //StudentRepository.deleteById(s4.getUniqueID().toString());
-        //nu merge
-        //ProfessorRepository.deleteById(p1.getUniqueID().toString());
+        StudentRepository.deleteById(s4.getUniqueID().toString());
+        StudentRepository.deleteById(s3.getUniqueID().toString());
+        ProfessorRepository.deleteById(p1.getUniqueID().toString());
+        ProfessorRepository.deleteById(p2.getUniqueID().toString());
+        //ProfessorRepository.deleteById(null);
+        System.out.println("3.4 Delete two obj");
+        System.out.println(StudentRepository);
+        System.out.println(ProfessorRepository);
 
         //3.6 Read a single elem by its name
-        System.out.println(StudentRepository.getAllByName("Ion"));
-        System.out.println(ProfessorRepository.getAllByName("Horatiu"));
+        System.out.println(StudentRepository.getAllByName("Ioana"));
+        System.out.println(ProfessorRepository.getAllByName("Victor"));
 
 
 
