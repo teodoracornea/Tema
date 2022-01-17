@@ -1,6 +1,4 @@
-package Tema7;
-
-import java.util.UUID;
+package tema7;
 
 //homework point 1
 public class Assignment implements Comparable<Assignment> {

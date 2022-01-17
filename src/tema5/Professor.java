@@ -1,16 +1,16 @@
-package Tema5;
+package tema5;
 
 import java.util.Objects;
 import java.util.UUID;
 
 public class Professor implements Human {
-    String firstName;
-    String lastName;
-    Integer dateOfBirth;
-    Integer dateOfHiring;
-    String specializationName;
-    ProfessorType type;
-    UUID uniqueID;
+    private String firstName;
+    private String lastName;
+    private Integer dateOfBirth;
+    private Integer dateOfHiring;
+    private String specializationName;
+    private ProfessorType type;
+    private UUID uniqueID;
 
     public Professor(String firstName, String lastName, Integer dateOfBirth, Integer dateOfHiring, String specializationName, ProfessorType type, UUID uniqueID) {
         this.firstName = firstName;

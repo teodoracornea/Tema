@@ -1,4 +1,4 @@
-package Tema5;
+package tema5;
 
 public enum StudentType implements ScholarType{
     BACHELOR("ba"),

@@ -1,8 +1,8 @@
-package Tema9;
+package tema9;
 
-import Tema10.EntityNotFoundException;
-import Tema10.ValidationException;
-import Tema5.Human;
+import tema10.EntityNotFoundException;
+import tema10.ValidationException;
+import tema5.Human;
 
 import java.util.ArrayList;
 import java.util.List;

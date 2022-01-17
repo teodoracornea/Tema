@@ -1,4 +1,4 @@
-package Tema7;
+package tema7;
 
 public enum DifficultyLevel {
     EASY,

@@ -1,11 +1,9 @@
-package Tema8;
+package tema8;
 
 public class PasswordChecker {
     public static void main(String[] args) {
-        String s1="H331lloWorldabc";
-        String s2="!!";
-        checker(s1);
-        checker(s2);
+         checker("H331lloWorldabc");
+         checker("!!");
     }
 
     public static void checker(String password ){

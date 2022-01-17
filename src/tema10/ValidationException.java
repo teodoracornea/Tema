@@ -1,4 +1,4 @@
-package Tema10;
+package tema10;
 
 public class ValidationException extends RuntimeException{
     public ValidationException(String message){

@@ -1,4 +1,4 @@
-package Tema10;
+package tema10;
 
 public class EntityNotFoundException extends RuntimeException{
     public EntityNotFoundException(String message){

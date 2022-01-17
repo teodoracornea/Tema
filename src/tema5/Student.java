@@ -1,17 +1,17 @@
-package Tema5;
+package tema5;
 
 import java.util.Objects;
 import java.util.UUID;
 
 public class Student implements Human {
-    String firstName;
-    String lastName;
-    Integer dateOfBirth;
-    Integer dateOfEnrollment;
-    public String facultyName = "utcn";
-    public String specializationName = "utcn";
-    StudentType type;
-    UUID uniqueID;
+    private String firstName;
+    private String lastName;
+    private Integer dateOfBirth;
+    private Integer dateOfEnrollment;
+    private String facultyName = "utcn";
+    private String specializationName = "utcn";
+    private StudentType type;
+    private UUID uniqueID;
 
 
     @Override

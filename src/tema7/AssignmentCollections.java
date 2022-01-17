@@ -1,4 +1,4 @@
-package Tema7;
+package tema7;
 
 import java.util.*;
 import java.util.function.Function;

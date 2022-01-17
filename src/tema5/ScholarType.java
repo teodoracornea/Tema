@@ -1,4 +1,4 @@
-package Tema5;
+package tema5;
 
 public interface ScholarType {
 }
