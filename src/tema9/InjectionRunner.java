@@ -8,12 +8,12 @@ public class InjectionRunner {
         HumanRepository<Student> studentRepositoryToInject = new HumanRepository<>();
         HumanRepository<Professor> professorRepositoryToInject = new HumanRepository<>();
 
-//        HumanService humanService = new HumanService(studentRepositoryToInject, professorRepositoryToInject);
-//
-//        humanService.exercise1();
-//        humanService.exercise2();
-//        humanService.exercise3();
-//        humanService.exercise31();
+        HumanService humanService = new HumanService(studentRepositoryToInject, professorRepositoryToInject);
+
+        humanService.exercise1();
+        humanService.exercise2();
+        humanService.exercise3();
+        humanService.exercise31();
 
 
     }
