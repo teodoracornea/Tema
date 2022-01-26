@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-public class HumanRepository<T extends Human> {
+public class humanRepository<T extends Human> {
 
     List<T> humans = new ArrayList<>();
 

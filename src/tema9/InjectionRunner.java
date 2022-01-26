@@ -5,8 +5,8 @@ import tema5.Student;
 
 public class InjectionRunner {
     public static void main(String[] args) {
-        HumanRepository<Student> studentRepositoryToInject = new HumanRepository<>();
-        HumanRepository<Professor> professorRepositoryToInject = new HumanRepository<>();
+        humanRepository<Student> studentRepositoryToInject = new humanRepository<>();
+        humanRepository<Professor> professorRepositoryToInject = new humanRepository<>();
 
         HumanService humanService = new HumanService(studentRepositoryToInject, professorRepositoryToInject);
 

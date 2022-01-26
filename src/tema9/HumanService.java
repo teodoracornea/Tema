@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.UUID;
 //3. Create a HumanService class having 2 HumanRepository fields
 public class HumanService {
-    private final HumanRepository <Student> StudentRepository;
-    private final HumanRepository <Professor> ProfessorRepository;
+    private final humanRepository<Student> StudentRepository;
+    private final humanRepository<Professor> ProfessorRepository;
 
-    public HumanService(HumanRepository<Student> injectedStudentRepository,
-                        HumanRepository<Professor> injectedProfessorRepository){
+    public HumanService(humanRepository<Student> injectedStudentRepository,
+                        humanRepository<Professor> injectedProfessorRepository){
         StudentRepository = injectedStudentRepository;
         ProfessorRepository = injectedProfessorRepository;
 
